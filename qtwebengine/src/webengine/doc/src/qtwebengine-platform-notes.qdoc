@@ -1,0 +1,131 @@
+/****************************************************************************
+**
+** Copyright (C) 2015 The Qt Company Ltd.
+** Contact: http://www.qt.io/licensing/
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see http://www.qt.io/terms-conditions. For further
+** information use the contact form at http://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: http://www.gnu.org/copyleft/fdl.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \page qtwebengine-platform-notes.html
+    \title Qt WebEngine Platform Notes
+
+    \brief Contains information about issues that are specific to the Qt WebEngine module.
+
+    \section1 Target Platforms
+
+    Qt WebEngine does try to support all \l{Supported Platforms} of Qt. However, due to
+    different requirements of Chromium this is not always possible. Known limitations are:
+
+    \list
+        \li Qt WebEngine currently supports only Windows, Linux, and OS X.
+
+        \li On Windows, Qt WebEngine only supports Windows Vista or newer as target platform.
+            Due to use of newer API in Chromium, Windows XP is not supported. WinRT is
+            not supported, either.
+    \endlist
+
+    \section1 Building Qt WebEngine from Source
+
+    Static builds are not supported.
+
+    The requirements for building Qt 5 modules from source are listed separately for each supported
+    platform:
+
+    \list
+        \li \l{Qt for Windows - Requirements}
+        \li \l{Qt for X11 Requirements}
+        \li \l{Qt for OS X - Requirements}
+    \endlist
+
+    In addition, the following tools are required for building the \l {Qt WebEngine} module:
+
+    \list
+        \li \l {All Platforms}
+        \li \l {Windows}
+        \li \l {Linux}
+        \li \l {OS X}
+    \endlist
+
+    The tests for skipping the Qt WebEngine build are located in the
+    \c qtwebengine repository, in the \c tools\qmake\mkspecs subdirectory.
+    They can be found by searching for \c skipBuild.
+
+    \section2 All Platforms
+
+    On all platforms, the following tools are required:
+
+    \list
+        \li \l Python 2.7 or later
+        \li Bison, Flex
+        \li GPerf
+    \endlist
+
+    \section2 Windows
+
+    On Windows, Visual Studio 2013 or Visual Studio 2015 is required.
+
+    \section2 Linux
+
+    On Linux, Clang or GCC version 4.7 or later is required.
+    Supported configurations are \c linux-g++ and \c{linux-clang}.
+
+    Qt WebEngine requires \c pkg-config to detect most of its dependencies. The
+    following \c pkg-config files are required:
+
+    \list
+        \li \c dbus-1
+        \li \c fontconfig
+    \endlist
+
+    If Qt was configured for \c xcb, the following \c pkg-config files are also
+    required:
+
+    \list
+        \li \c libdrm
+        \li \c xcomposite
+        \li \c xcursor
+        \li \c xi
+        \li \c xrandr
+        \li \c xscrnsaver
+        \li \c xtst
+    \endlist
+
+    Further, development packages for \c khr and \c libcap need to be installed.
+
+    \section2 OS X
+
+    On OS X, Xcode version 5.1 or later on OS X 10.9 or later is required.
+
+    \note Qt WebEngine cannot be built for the 32-bit mode of OS X (using the
+    \c macx-clang-32 \c mkspec).
+
+    \section1 Default QSurfaceFormat OpenGL Profile Support
+
+    If a new default QSurfaceFormat with a modified OpenGL profile has to be set, it should be set
+    before the application instance is declared, to make sure that all created OpenGL contexts use
+    the same OpenGL profile.
+
+    On OS X, if the default QSurfaceFormat is set after the application instance, the application
+    will exit with qFatal(), and print a message that the default QSurfaceFormat should be set
+    before the application instance.
+*/
