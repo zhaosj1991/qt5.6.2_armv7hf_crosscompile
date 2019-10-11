@@ -60,14 +60,14 @@ extern Q_CORE_EXPORT const qreal qt_sine_table[QT_SINE_TABLE_SIZE];
 
 inline int qCeil(qreal v)
 {
-    using std::ceil;
-    return int(ceil(v));
+//    using std::ceil;
+    return int(v);
 }
 
 inline int qFloor(qreal v)
 {
     using std::floor;
-    return int(floor(v));
+    return int(v);
 }
 
 inline qreal qFabs(qreal v)
