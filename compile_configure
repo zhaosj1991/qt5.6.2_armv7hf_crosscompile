@@ -10,4 +10,9 @@ ARMv8
 ./configure -prefix $PWD/build -xplatform zsj_linux-aarch64-gnu-g++ -release -opensource -no-accessibility -no-sse2 -no-sse3 -no-ssse3 -no-sse4.1 -no-sse4.2 -no-avx -no-avx2 -no-mips_dsp -no-mips_dspr2 -qt-zlib -no-mtdev -no-journald -no-syslog -no-openssl -qt-xcb -no-linuxfb -no-xinput2 -no-compile-examples -no-cups -no-iconv -no-tslib -no-evdev -no-icu -strip -no-opengl -no-eglfs -no-libinput -no-gstreamer -no-system-proxies -no-slog2 -no-pps -no-imf -no-lgmon -system-freetype -fontconfig -qpa xcb -v -qt-libjpeg -qt-libpng -no-libproxy -no-sql-db2 -no-sql-ibase -no-sql-mysql -no-sql-oci -no-sql-odbc -no-sql-psql -no-sql-sqlite -no-sql-sqlite2 -no-sql-tds -no-dbus -no-glib -no-pulseaudio -confirm-license -R ../ -R ./ -I $PWD/qtbase/src/3rdparty/freetype/include -I $PWD/qtwebengine/src/3rdparty/chromium/third_party/fontconfig/src
 
 
+x64_64
+
+./configure -prefix $PWD/build -xplatform zsj_linux-g++-64 -release -opensource -no-sse3 -no-ssse3 -no-sse4.1 -no-sse4.2 -no-avx -no-avx2 -no-mips_dsp -no-mips_dspr2 -qt-zlib -no-mtdev -no-journald -no-syslog -no-openssl -qt-xcb -no-linuxfb -no-xinput2 -no-compile-examples -no-cups -no-iconv -no-tslib -no-evdev -no-icu -strip -no-opengl -no-eglfs -no-libinput -no-gstreamer -no-system-proxies -no-slog2 -no-pps -no-imf -no-lgmon -system-freetype -fontconfig -qpa xcb -v -qt-libjpeg -qt-libpng -no-libproxy -no-sql-db2 -no-sql-ibase -no-sql-mysql -no-sql-oci -no-sql-odbc -no-sql-psql -no-sql-sqlite -no-sql-sqlite2 -no-sql-tds -no-dbus -no-glib -no-pulseaudio -confirm-license -R ../ -R ./ -I $PWD/qtbase/src/3rdparty/freetype/include -I $PWD/qtwebengine/src/3rdparty/chromium/third_party/fontconfig/src
+
+
 
